@@ -1,0 +1,33 @@
+@import "../global";
+.header {
+	padding: 14px 24px;
+	font-family: sans-serif;
+	background-color: $color-blue;
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.logo {
+	&__link {
+		display: flex;
+		align-items: center;
+		color: $color-white;
+		span {
+			@include font(20px, 500, 1.2);
+			margin-left: 8px;
+			letter-spacing: -0.0555556px;
+		}
+	}
+}
+
+.nav {
+	&__list {
+		display: flex;
+	}
+	&__item {
+		margin-left: 20px;
+	}
+}

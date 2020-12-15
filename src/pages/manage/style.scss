@@ -1,0 +1,55 @@
+@import "../../index.scss";
+
+.manage {
+	background-color: #f2f2f2;
+	padding-left: 300px;
+	padding-right: 30px;
+	padding-top: 24px;
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 24px;
+	}
+	&__add-user {
+		@include font(14px, 500);
+		display: flex;
+		align-items: center;
+		padding: 10px 16px;
+		background: $color-btn;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+		border-radius: 4px;
+		letter-spacing: 1.25px;
+		text-transform: uppercase;
+		color: $color-white;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		img {
+			margin-right: 14px;
+		}
+	}
+	&__filter {
+		@include font(14px, 500);
+		display: flex;
+		align-items: center;
+		padding: 10px 16px;
+		background-color: $color-white;
+		box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+		letter-spacing: 1.25px;
+		text-transform: uppercase;
+		color: $color-black;
+		border-radius: 4px;
+		cursor: pointer;
+		margin-right: 16px;
+	}
+	&__search {
+		input {
+			padding: 10px 16px;
+			width: calc(100vw - 620px);
+			outline: none;
+			border: none;
+			border-radius: 4px;
+			box-shadow: 0px 0px 0px #e4e7eb;
+		}
+	}
+}
