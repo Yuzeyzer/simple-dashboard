@@ -2,6 +2,7 @@ import React from 'react';
 import plus from '../../assets/plus-symbol.svg';
 import './style.scss';
 import Item from './item';
+import { BtnGoBack } from '../../components/btns/index';
 import axios from 'axios';
 
 const Manage = () => {
@@ -10,44 +11,42 @@ const Manage = () => {
     id: '',
     avatar: '',
     fullName: '',
-    userID:'',
+    userID: '',
     email: '',
     phone: '',
-    dateOfRegistry: ''
-  })
+    dateOfRegistry: '',
+  });
   const [activeModal, setActiveModal] = React.useState(false);
 
   const handleClick = () => {
     setActiveModal(activeModal ? false : true);
   };
 
-  const atai = new Date()
-
   const saveData = (event) => {
     setNewUser({
       id: '',
       avatar: event.target.form[1].value,
       fullName: event.target.form[0].value,
-      userID:event.target.form[2].value,
+      userID: event.target.form[2].value,
       email: event.target.form[4].value,
       phone: event.target.form[3].value,
-      dateOfRegistry: ''
-    })
-  }
+      dateOfRegistry: '',
+    });
+  };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-    setUsersData([...usersData,newUser ])
+    event.preventDefault();
+    setUsersData([...usersData, newUser]);
     setNewUser({
       id: '',
       avatar: '',
       fullName: '',
-      userID:'',
+      userID: '',
       email: '',
       phone: '',
-      dateOfRegistry: ''
-    })
-  }
+      dateOfRegistry: '',
+    });
+  };
 
   React.useEffect(async () => {
     await axios
@@ -60,15 +59,44 @@ const Manage = () => {
     <section className='manage'>
       {activeModal && (
         <div className='modal'>
-          <form onSubmit={(event) => handleSubmit(event)}>
-            <h3>Я есть модалка</h3>
-            <input onChange={(event) => saveData(event)} value={newUser.fullName} type='text' placeholder='Введите Имя Пользователя' />
-            <input onChange={(event) => saveData(event)} value={newUser.avatar} type='text' placeholder='Введите путь к картинке' />
-            <input onChange={(event) => saveData(event)} value={newUser.userID} type='text' placeholder='Введите ID' />
-            <input onChange={(event) => saveData(event)} value={newUser.phone} type='text' placeholder='Введите номер телефона' />
-            <input onChange={(event) => saveData(event)} value={newUser.email} type='text' placeholder='Введите почту пользователя' />
-           <button>Добавить пользователя</button>
-          </form>
+          <div>
+            <BtnGoBack />
+            <h3 className="modal__title">Create a new user</h3>
+            <h6 className="modal__suptitle">Add main information about user</h6>
+            <form className="modal__form" onSubmit={(event) => handleSubmit(event)}>
+              <input
+                onChange={(event) => saveData(event)}
+                value={newUser.fullName}
+                type='text'
+                placeholder='Введите Имя Пользователя'
+              />
+              <input
+                onChange={(event) => saveData(event)}
+                value={newUser.avatar}
+                type='text'
+                placeholder='Введите путь к картинке'
+              />
+              <input
+                onChange={(event) => saveData(event)}
+                value={newUser.userID}
+                type='text'
+                placeholder='Введите ID'
+              />
+              <input
+                onChange={(event) => saveData(event)}
+                value={newUser.phone}
+                type='text'
+                placeholder='Введите номер телефона'
+              />
+              <input
+                onChange={(event) => saveData(event)}
+                value={newUser.email}
+                type='text'
+                placeholder='Введите почту пользователя'
+              />
+              <button>Добавить пользователя</button>
+            </form>
+          </div>
         </div>
       )}
       <div className='manage__top'>

@@ -10,6 +10,12 @@
 	padding: 0 16px;
 	background-color: $color-white;
 	box-shadow: 0px 0px 0px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+	svg {
+		max-width: 20px;
+		max-height: 20px;
+		fill: $color-darkGray;
+		transition: 0.2s;
+	}
 	&__top {
 		padding: 24px 16px;
 		text-align: center;
@@ -26,12 +32,25 @@
 		text-align: center;
 	}
 	&__nav {
-		padding: 30px 16px;
+		padding: 10px 0;
 	}
 	&__item {
-		margin-bottom: 26px;
+		margin-bottom: 13px;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: 0.2s;
 		&:last-child {
 			margin-bottom: 0;
+		}
+		&.is-active {
+			background-color: $color-lightBlue;
+			border-left: 3px solid $color-blue;
+			svg {
+				fill: $color-blue;
+			}
+			a {
+				color: $color-black;
+			}
 		}
 	}
 	&__link {
@@ -40,6 +59,7 @@
 		color: $color-darkGray;
 		display: flex;
 		align-items: center;
+		padding: 13px 19px;
 		span {
 			margin-left: 8px;
 		}

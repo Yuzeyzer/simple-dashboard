@@ -1,0 +1,17 @@
+@import "../global";
+.btn-back {
+	display: flex;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	svg {
+		margin-right: 8px;
+	}
+	span {
+		@include font(14px);
+		letter-spacing: -0.05px;
+		color: $color-gray;
+	}
+}
