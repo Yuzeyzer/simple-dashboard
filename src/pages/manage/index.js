@@ -59,11 +59,13 @@ const Manage = () => {
     <section className='manage'>
       {activeModal && (
         <div className='modal'>
-          <div>
-            <BtnGoBack />
-            <h3 className="modal__title">Create a new user</h3>
-            <h6 className="modal__suptitle">Add main information about user</h6>
-            <form className="modal__form" onSubmit={(event) => handleSubmit(event)}>
+          <div className='col-6'>
+            <div onClick={() => setActiveModal(false)}>
+              <BtnGoBack />
+            </div>
+            <h3 className='modal__title'>Create a new user</h3>
+            <h6 className='modal__suptitle'>Add main information about user</h6>
+            <form className='modal__form' onSubmit={(event) => handleSubmit(event)}>
               <input
                 onChange={(event) => saveData(event)}
                 value={newUser.fullName}
@@ -94,9 +96,10 @@ const Manage = () => {
                 type='text'
                 placeholder='Введите почту пользователя'
               />
-              <button>Добавить пользователя</button>
+              <button className='btn-blue form__btn'>Add New User</button>
             </form>
           </div>
+          <div className='col-6'>Тут должна быть картинка</div>
         </div>
       )}
       <div className='manage__top'>

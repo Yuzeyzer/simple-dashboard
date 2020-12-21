@@ -20,6 +20,9 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 }
+.col-6 {
+	width: 50%;
+}
 .col-3 {
 	width: 25%;
 }
@@ -34,4 +37,42 @@ img {
 	padding-left: 300px;
 	padding-right: 30px;
 	padding-top: 24px;
+}
+
+.btn-blue {
+	@include font(14px, 500);
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 10px 16px;
+	background: $color-btn;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	letter-spacing: 1.25px;
+	text-transform: uppercase;
+	color: $color-white;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	z-index: 1;
+	overflow: hidden;
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		right: 50%;
+		top: 0;
+		background-color: $color-white;
+		height: 100%;
+		width: 0;
+		transition: 0.6s ease-in-out;
+		transform: translateX(50%);
+	}
+	&:hover {
+		color: $color-blue;
+		border: 1px solid $color-blue;
+	}
+	&:hover::before {
+		width: 101%;
+	}
 }

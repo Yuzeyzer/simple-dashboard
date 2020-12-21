@@ -52,7 +52,7 @@ export const navItems = [
   },
   {
     text: 'Authentication',
-    link:'authentication',
+    link:'/authentication',
     icon: (
       <svg
         version='1.1'
@@ -68,7 +68,7 @@ export const navItems = [
   },
   {
     text: 'Typography',
-    link:'typography',
+    link:'/typography',
     icon: (
       <svg
         version='1.1'
@@ -84,7 +84,7 @@ export const navItems = [
   },
   {
     text: 'Icons & Images',
-    link: 'media',
+    link: '/media',
     icon: (
       <svg
         version='1.1'

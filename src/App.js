@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
 import Manage from './pages/manage/index';
@@ -14,8 +14,8 @@ function App() {
     <div className='App'>
       <Header />
       <Sidebar />
-      <Route exact path='/' component={Dashboard}/>
-      <Route path='/users' component={Manage}/>
+      <Route exact path='/' component={Dashboard} />
+      <Route path='/users' component={Manage} />
     </div>
   );
 }

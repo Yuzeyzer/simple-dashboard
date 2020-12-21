@@ -133,11 +133,31 @@
 		margin-bottom: 40px;
 	}
 	&__form {
+		display: flex;
+		flex-direction: column;
 		input {
+			margin-bottom: 16px;
 			padding: 13px 16px;
 			border: 1px solid rgba(0, 0, 0, 0.32);
 			box-sizing: border-box;
 			border-radius: 4px;
+			font-family: Roboto;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 24px;
+			letter-spacing: 0.15px;
+			&:focus {
+				outline-color: $color-blue;
+			}
+		}
+		button {
+			padding: 12px 0;
+			justify-content: center;
+			transition: 0.3s;
+			&:active {
+				transform: scale(0.95);
+			}
 		}
 	}
 }
