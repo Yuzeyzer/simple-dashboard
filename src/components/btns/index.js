@@ -1,5 +1,24 @@
 import React from 'react';
 import './style.scss';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
+
+const useStyles = makeStyles((theme) => ({
+ plusIcon: {
+   margin: '0 10px 0 0'
+ }
+}));
+
+export function PrimaryBtn({text}) {
+  const classes = useStyles();
+  return (
+      <Button variant="contained" color="primary">
+        <AddOutlinedIcon className={classes.plusIcon}/>
+        {text}
+      </Button>
+  );
+}
 
 export const BtnGoBack = () => {
   return (
