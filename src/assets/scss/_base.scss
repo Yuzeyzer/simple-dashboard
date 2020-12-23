@@ -23,6 +23,9 @@ img {
 .col-6 {
 	width: 50%;
 }
+.col-4 {
+	width: 33.33%;
+}
 .col-3 {
 	width: 25%;
 }
@@ -38,9 +41,11 @@ img {
 }
 
 .section__container {
+	background-color: #f2f2f2;
 	padding-left: 300px;
 	padding-right: 30px;
 	padding-top: 24px;
+	min-height: 100vh;
 }
 
 .btn-blue {

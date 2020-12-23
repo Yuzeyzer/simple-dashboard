@@ -1,7 +1,7 @@
 export const navItems = [
   {
     text: 'Dashboard',
-    link:'/',
+    link:'/dashboard',
     icon: (
       <svg
         version='1.1'

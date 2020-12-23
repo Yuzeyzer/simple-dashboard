@@ -2,8 +2,8 @@
   "users": [
     {
 			"id": 0,
-			"avatar": "https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/batman_hero_avatar_comics-512.png",
-      "fullName": "Петров Петр Петрович",
+			"avatar": "https://avatars1.githubusercontent.com/u/73682291?s=460&u=ded808afefc0c24d3ed72571f0d33682e4b09484&v=4",
+      "fullName": "Жамал Амазалиева",
       "userID": "DEV63016762",
       "email": "rsnyder@blogspan.gov",
 			"phone": "1-(618)312-3065",
@@ -216,5 +216,14 @@
 			"phone": "1-(618)312-3065",
 			"dateOfRegistry": "04/28/2015"
     }
-  ]
+	],
+	"products": [{
+		"id": 0,
+		"productLogo": "https://www.pngkey.com/png/detail/55-556528_pic-avatars-for-jira-star-wars.png",
+		"companyLogo": "Петров Петр Петрович",
+		"title": "Dropbox",
+		"description": "dasdsadawdawfesfzsfzsfzesfzesdzssv",
+		"updatedTime": "2 hours",
+		"downloads": "343"
+	}]
 }

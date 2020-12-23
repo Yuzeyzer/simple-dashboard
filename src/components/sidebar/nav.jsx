@@ -15,8 +15,13 @@ const Nav = () => {
         {navItems.map((item, index) => {
           return (
             <li
-              onClick={() => handleClick(index)}
-              className={`sidebar__item ${itemActive === index ? 'is-active' : ''}`}>
+              onClick={() => {
+                handleClick(index);
+               
+              }}
+              className={`sidebar__item ${
+                window.location.href.includes(item.link) ? 'is-active' : ''
+              }`}>
               <Link className='sidebar__link' to={item.link}>
                 {item.icon}
                 <span>{item.text}</span>

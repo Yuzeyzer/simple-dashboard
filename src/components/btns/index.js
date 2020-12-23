@@ -5,24 +5,24 @@ import Button from '@material-ui/core/Button';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 
 const useStyles = makeStyles((theme) => ({
- plusIcon: {
-   margin: '0 10px 0 0'
- }
+  plusIcon: {
+    margin: '0 10px 0 0',
+  },
 }));
 
-export function PrimaryBtn({text}) {
+export function PrimaryBtn({ text, handleClickModal }) {
   const classes = useStyles();
   return (
-      <Button variant="contained" color="primary">
-        <AddOutlinedIcon className={classes.plusIcon}/>
-        {text}
-      </Button>
+    <Button onClick={handleClickModal} variant='contained' color='primary'>
+      <AddOutlinedIcon className={classes.plusIcon} />
+      {text}
+    </Button>
   );
 }
 
 export const BtnGoBack = () => {
   return (
-    <button className="btn-back">
+    <button className='btn-back'>
       <svg
         width='18'
         height='14'

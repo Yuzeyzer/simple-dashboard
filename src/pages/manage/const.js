@@ -8,7 +8,7 @@ export const columns = [
     width: 250,
     renderCell: (params) => (
       <div className="row user__row">
-         <img className='user__avatar' src={params.row.avatar} alt='А картинки нет, ай ай' />
+         <img className='user__avatar' src={params.row.avatar} alt='No image' />
 				<span className='user__name'>{params.row.fullName}</span>
       </div>
     ),
