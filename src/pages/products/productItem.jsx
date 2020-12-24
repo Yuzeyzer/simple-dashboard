@@ -3,7 +3,7 @@ import timeIcon from '../../assets/time-icon.svg';
 import downloadIcon from '../../assets/download-icon.svg';
 
 const ProductItem = ({item}) => {
-	console.log(item)
+
 
   return (
     <div className='col-4 products__column'>
