@@ -16,7 +16,7 @@ export default function Manage() {
 
   React.useEffect(async () => {
     await axios
-      .get(`http://localhost:3000/database.json`)
+      .get(`http://localhost:3001/database.json`)
       .then((response) => response)
       .then(({ data }) => setUsersData(data.users));
   }, []);

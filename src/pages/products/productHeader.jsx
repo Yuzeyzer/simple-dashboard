@@ -16,7 +16,7 @@ const ProductHeader = () => {
         </div>
       </div>
     </div>
-  );
+	);
 };
 
 export default ProductHeader;
