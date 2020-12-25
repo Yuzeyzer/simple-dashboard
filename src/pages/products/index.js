@@ -5,14 +5,12 @@ import ProductItem from './productItem';
 import SearchBar from './searchBar';
 import axios from 'axios';
 import { GreenBtn } from '../../components/btns';
-import Modal from '../manage/modal';
+import Modal from './modal';
 
 const Products = () => {
   const [products, setProducts] = React.useState([]);
   const [modalActive, setModalActive] = React.useState(false);
-  const [searchValue,setSearchValue] = React.useState('');
-  const array = ['BOGDAN', 'aYdAy', 'EraLY'];
-  const newArray = array.map(item => item.toLowerCase())
+  const [searchValue, setSearchValue] = React.useState('')
 
   React.useEffect(() => {
     axios
@@ -22,7 +20,7 @@ const Products = () => {
   }, []);
   return (
     <section className='products'>
-      {modalActive && <Modal setActiveModal={setModalActive} />}
+      {modalActive && <Modal setProducts={setProducts} products={products} setActiveModal={setModalActive} />}
       <div className='container section__container'>
         <ProductHeader />
         <div className='d-flex-between'>
@@ -33,12 +31,13 @@ const Products = () => {
         </div>
         <div className='row products__wrapper'>
          {products.filter(item => {
-            if(searchValue === '')
-            return item
-            else if(item.productName.toLowerCase().includes(searchValue.toLowerCase())){
-            return item
-        }
-         }).map(item => <ProductItem item={item} />)}
+           if (searchValue === '') {
+             return item
+           }
+           else if (item.productName.toLowerCase().includes(searchValue.toLowerCase())) {
+             return item
+           }
+         }).map(item => <ProductItem item={item}/>)}
         </div>
       </div>
     </section>
@@ -46,19 +45,3 @@ const Products = () => {
 };
 
 export default Products;
-
-
-// {products.map((item) => {
-//   Array.from(item.productName).filter(item => {
-//      if (item.toLowerCase() === searchValue.toLowerCase()) {
-//        return <ProductItem item={item} />
-//      }
-
-//    })
-//    if (item.productName.toLowerCase() === searchValue.toLowerCase()) {
-//      return <ProductItem item={item} />
-//    }
-//    else if (searchValue === '') {
-//      return <ProductItem item={item} />
-//    }
-//  })}

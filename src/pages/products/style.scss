@@ -51,6 +51,9 @@
 		padding: 16px;
 	}
 	&__item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		text-align: center;
 		background-color: $color-white;
 		padding: 20px 20px 10px;
@@ -86,11 +89,13 @@
 		padding: 0 8px;
 	}
 	&__footer {
-		padding-top: 10px;
+		padding-top: 5px;
+		border-top: 2px solid $color-gray;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		div {
+			padding-top: 5px;
 			display: flex;
 			align-items: center;
 		}
@@ -98,6 +103,9 @@
 			@include font(12px, 400);
 			color: $color-gray;
 			margin-left: 5px;
+		}
+		img {
+			max-width: 20px;
 		}
 	}
 }

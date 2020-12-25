@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     width: 400,
-    maxHeight: '36px'
+    maxHeight: '36px',
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -26,21 +26,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SearchBar() {
+function SearchBar({ setSearchValue }) {
   const classes = useStyles();
+  const [inputValue, setInputValue] = React.useState('');
+
+  const handleInput = (event) => {
+    setInputValue(event.target.value);
+    setSearchValue(event.target.value);
+  };
 
   return (
-    <Paper component="form" className={classes.root}>
-      <IconButton type="submit" className={classes.iconButton} aria-label="search">
+    <Paper component='form' className={classes.root}>
+      <IconButton type='submit' className={classes.iconButton} aria-label='search'>
         <SearchIcon />
       </IconButton>
       <InputBase
         className={classes.input}
-        placeholder="Search users by name, id"
+        placeholder='Search users by name, id'
         inputProps={{ 'aria-label': 'search google maps' }}
+        value={inputValue}
+        onChange={(e) => handleInput(e)}
       />
     </Paper>
   );
 }
 
-export default SearchBar
+export default SearchBar;

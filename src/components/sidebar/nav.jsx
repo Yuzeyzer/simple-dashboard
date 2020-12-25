@@ -15,7 +15,8 @@ const Nav = () => {
         {navItems.map((item, index) => {
           return (
             <li
-              onClick={() => {
+              key={item + index}
+                onClick={() => {
                 handleClick(index);
                
               }}

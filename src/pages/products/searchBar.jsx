@@ -28,14 +28,11 @@ const useStyles = makeStyles((theme) => ({
 
 function SearchBar({setSearchValue}) {
   const classes = useStyles();
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue ,setInputValue] = React.useState('')
 
   const handleInput = (event) => {
     setInputValue(event.target.value)
     setSearchValue(event.target.value)
-  }
-  const handleKeyPress = (e) => {
-    
   }
 
   return (
@@ -47,10 +44,7 @@ function SearchBar({setSearchValue}) {
         className={classes.input}
         placeholder="Search users by name, id"
         inputProps={{ 'aria-label': 'search google maps' }}
-        value={inputValue}
-        onChange={(event) => handleInput(event)}
-        onKeyPress={handleKeyPress}
-
+        onChange={(e) => handleInput(e)}
       />
     </Paper>
   );

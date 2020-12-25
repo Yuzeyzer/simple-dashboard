@@ -1,26 +1,20 @@
 import React from 'react';
 import { BtnGoBack } from '../../components/btns/index';
 import modalRight from '../../assets/modal-right.png';
+import distanseInWordsToNow from 'date-fns/distance_in_words_to_now';
+import ruLocale from 'date-fns/locale/ru';
+import enLocale from 'date-fns/locale/en';
 
-const Modal = ({ setActiveModal, activeModal, setUsersData, usersData }) => {
-  const [newUser, setNewUser] = React.useState({
+
+const Modal = ({ setActiveModal, activeModal, setProducts, products }) => {
+  const [newProduct, setNewProduct] = React.useState({
     id: '',
-    avatar: '',
-    fullName: '',
-    userID: '',
-    email: '',
-    phone: '',
-    dateOfRegistry: '',
+    productLogo: '',
+    productName: '',
+    productDescription: '',
+    updatedTime: '',
+    downloads: '',
   });
-  const currentDate = () => {
-    const newDate = new Date();
-    const date = newDate.getDate();
-    const month = newDate.getMonth() + 1;
-    const year = newDate.getFullYear();
-    const separator = '/';
-    const result = `${date}${separator}${month < 10 ? `0${month}` : `${month}`}${separator}${year}`;
-    return result;
-  };
 
   const modaRef = React.useRef();
   const modalWrapperRef = React.useRef();
@@ -32,21 +26,28 @@ const Modal = ({ setActiveModal, activeModal, setUsersData, usersData }) => {
   };
 
   const saveData = (event) => {
-    setNewUser({
-      id: event.target.form[0].value,
-      avatar: event.target.form[1].value,
-      fullName: event.target.form[0].value,
-      userID: event.target.form[2].value,
-      email: event.target.form[4].value,
-      phone: event.target.form[3].value,
-      dateOfRegistry: currentDate(),
+    setNewProduct({
+      id: '1',
+      productLogo: event.target.form[1].value,
+      productName: event.target.form[0].value,
+      productDescription: event.target.form[2].value,
+      updatedTime: new Date(),
+      downloads: event.target.form[3].value,
     });
   };
 
   const handleSubmit = (event) => {
     setActiveModal(false);
     event.preventDefault();
-    setUsersData([...usersData, newUser]);
+    setProducts([...products, newProduct]);
+    setNewProduct({
+    id: '',
+    productLogo: '',
+    productName: '',
+    productDescription: '',
+    updatedTime: '',
+    downloads: '',
+    });
   };
 
   React.useEffect(() => {
@@ -62,60 +63,50 @@ const Modal = ({ setActiveModal, activeModal, setUsersData, usersData }) => {
           <div onClick={() => setActiveModal(false)}>
             <BtnGoBack />
           </div>
-          <h3 className='modal__title'>Create a new user</h3>
-          <h6 className='modal__suptitle'>Add main information about user</h6>
+          <h3 className='modal__title'>Create a new product</h3>
+          <h6 className='modal__suptitle'>Add main information about product</h6>
           <form className='modal__form' onSubmit={(event) => handleSubmit(event)}>
             <label className='modal__label' htmlFor=''>
               <input
                 required
                 onChange={(event) => saveData(event)}
-                value={newUser.fullName}
+                value={newProduct.productName}
                 type='text'
-                placeholder='Введите Имя Пользователя'
+                placeholder='Type Product Name'
               />
-              <p>Имя пользователя</p>
+              <p>Product Name</p>
             </label>
             <label htmlFor='' className='modal__label'>
               <input
                 required
                 onChange={(event) => saveData(event)}
-                value={newUser.avatar}
+                value={newProduct.productLogo}
                 type='text'
-                placeholder='Введите путь к картинке'
+                placeholder='Type Url To Image'
               />
-              <p>Картинка</p>
+              <p>Image</p>
             </label>
             <label htmlFor='' className='modal__label'>
               <input
                 required
                 onChange={(event) => saveData(event)}
-                value={newUser.userID}
+                value={newProduct.productDescription}
                 type='text'
-                placeholder='Введите ID'
+                placeholder='Type Product Description'
               />
-              <p>ID</p>
+              <p>Product Description</p>
             </label>
             <label htmlFor='' className='modal__label'>
               <input
                 required
                 onChange={(event) => saveData(event)}
-                value={newUser.phone}
+                value={newProduct.downloads}
                 type='text'
-                placeholder='Введите номер телефона'
+                placeholder='Type Downloads'
               />
-              <p>Номер телефона</p>
+              <p>Downloads</p>
             </label>
-            <label htmlFor='' className='modal__label'>
-              <input
-                required
-                onChange={(event) => saveData(event)}
-                value={newUser.email}
-                type='text'
-                placeholder='Введите почту пользователя'
-              />
-              <p>Почта пользователя</p>
-            </label>
-            <button className='btn-blue form__btn'>Add New User</button>
+            <button className='btn-blue form__btn'>Add New Product</button>
           </form>
         </div>
         <div className='col-6 text-right'>
