@@ -1,0 +1,130 @@
+@import "../../index.scss";
+.top-cards {
+	&__row {
+		margin: -15px;
+	}
+	&__column {
+		padding: 15px;
+	}
+	&__item {
+		min-height: 100%;
+		padding: 20px 24px 30px;
+		background-color: $color-white;
+		border: 1px solid rgba(63, 63, 68, 0.005);
+		box-shadow: 0px 1px 0px rgba(63, 63, 68, 0.05), 0px 1px 3px rgba(63, 63, 68, 0.15);
+		border-radius: 4px;
+	}
+	&__suptitle {
+		@include font(12px, 700);
+		letter-spacing: 0.996px;
+		text-transform: uppercase;
+		color: $color-gray;
+	}
+	&__flex {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $color-red;
+		width: 64px;
+		height: 64px;
+		border-radius: 50%;
+	}
+	&__title {
+		@include font(24px, 500);
+		margin-top: 8px;
+		letter-spacing: -0.06px;
+		color: $color-black;
+	}
+	&__details {
+		margin-top: 24px;
+	}
+	&__percent {
+		position: relative;
+		@include font(12px, 500);
+		margin: 0 8px 0 10px;
+		letter-spacing: -0.0375px;
+		color: $color-red;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: -10px;
+			width: 0;
+			height: 0;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+			border-top: 6px solid $color-red;
+			transform: translateY(-50%);
+		}
+	}
+	&__month {
+		@include font(12px, 500);
+		letter-spacing: -0.0428571px;
+		color: $color-gray;
+	}
+	&__column:nth-child(2) {
+		.top-cards__icon {
+			background-color: $color-green;
+		}
+		.top-cards__percent {
+			color: $color-green;
+			&::before {
+				border-top: 6px solid $color-green;
+			}
+		}
+	}
+	&__column:nth-child(3) {
+		.top-cards__icon {
+			background-color: $color-blue;
+		}
+		.top-cards__progressBar {
+			margin-top: 30px;
+			position: relative;
+			display: block;
+			background-color: $color-lightBlue;
+			height: 4px;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: $color-blue;
+				width: 100px;
+				height: 100%;
+			}
+		}
+	}
+	&__column:nth-child(4) {
+		.top-cards__suptitle,
+		.top-cards__title,
+		.top-cards__month {
+			color: $color-white;
+		}
+		.top-cards__item {
+			background-color: $color-blue;
+		}
+		.top-cards__icon {
+			background-color: $color-blue;
+		}
+		.top-cards__percent {
+			color: $color-white;
+			&::before {
+				border-top: 6px solid $color-white;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	.top-cards {
+		&__row {
+			.top-cards__column {
+				width: 50%;
+			}
+		}
+	}
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import timeIcon from '../../assets/time-icon.svg';
 import downloadIcon from '../../assets/download-icon.svg';
 import distanseInWordsToNow from 'date-fns/distance_in_words_to_now';
-import ruLocale from 'date-fns/locale/ru';
 import enLocale from 'date-fns/locale/en';
 
 const ProductItem = ({item}) => {
@@ -22,7 +21,9 @@ const ProductItem = ({item}) => {
         <div className='products__footer row'>
           <div>
             <img src={timeIcon} alt='time icon' />
-            <span>Updated {distanseInWordsToNow(item.updatedTime, { addSuffix: true, locale: enLocale, includeSeconds: true  })}</span>
+            <span>Updated {distanseInWordsToNow(item.updatedTime, 
+              { addSuffix: true, locale: enLocale, includeSeconds: true  }
+              )}</span>
           </div>
           <div>
 						<a href="https://slack.com/ssb/download-win">
