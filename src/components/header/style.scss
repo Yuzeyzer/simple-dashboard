@@ -1,5 +1,8 @@
 @import "../global";
 .header {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
 	padding: 14px 24px;
 	font-family: sans-serif;
 	background-color: $color-blue;

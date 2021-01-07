@@ -17,10 +17,15 @@ const TopCards = () => {
               </div>
               <div className='top-cards__details'>
                 {item.progressBar ? (
-                  <span className="top-cards__progressBar"></span>
+                  <span className='top-cards__progressBar'></span>
                 ) : (
                   <div>
-                    <span className='top-cards__percent'>{item.percent}%</span>
+                    <span
+                      className={`top-cards__percent ${
+                        item.income ? 'top-cards__percent--up' : 'top-cards__percent--down'
+                      }`}>
+                      {item.percent}%
+                    </span>
                     <span className='top-cards__month'>Since last month</span>
                   </div>
                 )}

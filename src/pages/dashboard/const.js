@@ -31,6 +31,7 @@ export const cardsData = [
     ),
     percent: 12,
     progressBar: false,
+    income: false,
   },
   {
     suptitle: 'TOTAL USERS',
@@ -64,6 +65,7 @@ export const cardsData = [
     ),
     percent: 16,
     progressBar: false,
+    income: true,
   },
   {
     suptitle: 'PROGRESS',
@@ -95,6 +97,7 @@ export const cardsData = [
     ),
     percent: 16,
     progressBar: true,
+    income: false,
   },
   {
     suptitle: 'TOTAL PROFIT',
@@ -128,5 +131,12 @@ export const cardsData = [
     ),
     percent: 16,
     progressBar: false,
+    income: true,
   },
+];
+export const days = ['1 day', '7 days', '30 days'];
+export const chartData = [
+  [35, 15, 60, 5, 25, 75, 25],
+  [12, 19, 23, 15, 20, 5, 35],
+  [9, 40, 25, 45, 75, 16, 21],
 ];

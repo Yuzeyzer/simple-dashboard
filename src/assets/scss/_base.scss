@@ -20,6 +20,12 @@ img {
 	display: flex;
 	flex-wrap: wrap;
 }
+.col-12 {
+	width: 100%;
+}
+.col-9 {
+	width: 75%;
+}
 .col-6 {
 	width: 50%;
 }
@@ -44,7 +50,7 @@ img {
 	background-color: #f2f2f2;
 	padding-left: 300px;
 	padding-right: 30px;
-	padding-top: 24px;
+	padding-top: 88px;
 	min-height: 100vh;
 }
 
@@ -89,4 +95,15 @@ img {
 .d-flex-between {
 	display: flex;
 	justify-content: space-between;
+}
+
+.blue {
+	color: $color-blue;
+}
+.red {
+	color: $color-red;
+}
+
+.yellow {
+	color: $color-yellow;
 }

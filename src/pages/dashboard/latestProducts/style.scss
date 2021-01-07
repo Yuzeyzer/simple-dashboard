@@ -1,0 +1,47 @@
+.latest {
+	&__total {
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 16px;
+		color: $color-gray;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid $border-color;
+		padding: 20px 0;
+		&:nth-child(6) {
+			border-bottom: none;
+		}
+	}
+	&__img {
+		max-width: 64px;
+		margin-right: 32px;
+		object-fit: cover;
+	}
+	&__title {
+		@include font(16px, 600);
+		margin-bottom: 4px;
+		letter-spacing: -0.0571429px;
+		color: $color-black;
+	}
+	&__time {
+		@include font(12px, 400);
+		color: $color-gray;
+	}
+	&__view {
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		/* identical to box height, or 143% */
+
+		text-align: right;
+		letter-spacing: -0.05px;
+
+		color: #1070ca;
+	}
+}

@@ -9,6 +9,18 @@ const Nav = () => {
     setItemActive(index);
   };
 
+  const handleWindowClick = (event) => {
+    if (event.path[0].pathname === '/products') {
+      const array = navItems.map((item) => item.link);
+      const result = array.indexOf(event.path[0].pathname);
+      setItemActive(result);
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener('click', handleWindowClick);
+  }, []);
+
   return (
     <nav className='sidebar__nav'>
       <ul>
@@ -16,13 +28,10 @@ const Nav = () => {
           return (
             <li
               key={item + index}
-                onClick={() => {
+              onClick={() => {
                 handleClick(index);
-               
               }}
-              className={`sidebar__item ${
-                window.location.href.includes(item.link) ? 'is-active' : ''
-              }`}>
+              className={`sidebar__item ${itemActive === index ? 'is-active' : ''}`}>
               <Link className='sidebar__link' to={item.link}>
                 {item.icon}
                 <span>{item.text}</span>

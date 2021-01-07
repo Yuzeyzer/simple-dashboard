@@ -1,4 +1,5 @@
 @import "../../index.scss";
+@import "./latestProducts/style.scss";
 .top-cards {
 	&__row {
 		margin: -15px;
@@ -47,7 +48,7 @@
 		@include font(12px, 500);
 		margin: 0 8px 0 10px;
 		letter-spacing: -0.0375px;
-		color: $color-red;
+
 		&::before {
 			content: "";
 			position: absolute;
@@ -57,8 +58,20 @@
 			height: 0;
 			border-left: 3px solid transparent;
 			border-right: 3px solid transparent;
-			border-top: 6px solid $color-red;
-			transform: translateY(-50%);
+		}
+		&--up {
+			color: $color-green;
+			&::before {
+				border-top: 6px solid $color-green;
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+		&--down {
+			color: $color-red;
+			&::before {
+				border-top: 6px solid $color-red;
+				transform: translateY(-50%);
+			}
 		}
 	}
 	&__month {
@@ -69,12 +82,6 @@
 	&__column:nth-child(2) {
 		.top-cards__icon {
 			background-color: $color-green;
-		}
-		.top-cards__percent {
-			color: $color-green;
-			&::before {
-				border-top: 6px solid $color-green;
-			}
 		}
 	}
 	&__column:nth-child(3) {
@@ -125,6 +132,137 @@
 			.top-cards__column {
 				width: 50%;
 			}
+		}
+	}
+}
+
+.chartjs-render-monitor {
+	width: 100% !important;
+	max-height: 400px !important;
+	min-height: 400px !important;
+}
+
+.dashboard {
+	&__row {
+		margin: -15px;
+	}
+	&__column {
+		padding: 15px;
+	}
+	&__item {
+		padding: 18px 24px;
+		min-height: 100%;
+		background-color: $color-white;
+	}
+}
+
+.circle {
+	&__row {
+		max-width: 210px;
+		margin: 24px auto 65px;
+		text-align: center;
+	}
+	&__title {
+		@include font(12px, 500);
+		margin: 10px 0 8px;
+		color: $color-gray;
+	}
+	&__percent {
+		@include font(30px, 500);
+		letter-spacing: -0.241667px;
+	}
+	&__footer {
+		margin: 0 -24px;
+		padding: 10px 24px 0 8px;
+		border-top: 1px solid $border-color;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__filter {
+		@include font(14px, 600);
+		position: relative;
+		letter-spacing: -0.05px;
+		color: $color-black;
+		cursor: pointer;
+	}
+	&__list {
+		position: absolute;
+		left: 0;
+		bottom: -110px;
+		background-color: $color-white;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+		padding: 10px;
+		border-radius: 4px;
+		li {
+			margin-bottom: 10px;
+			text-align: center;
+			@include font(12px, 400);
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__chart {
+		display: block;
+		margin: auto;
+		width: 244px;
+	}
+}
+
+.column {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__title {
+		@include font(16px, 500);
+		letter-spacing: -0.05px;
+		color: $color-black;
+	}
+	&__filter {
+		position: relative;
+		display: flex;
+		align-items: center;
+		@include font(12px, 500);
+		margin: 0 8px 0 10px;
+		letter-spacing: -0.0375px;
+		cursor: pointer;
+		color: $color-black;
+		user-select: none;
+		margin-right: 15px;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: -15px;
+			width: 0;
+			height: 0;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+		}
+		&--up {
+			&::before {
+				border-top: 6px solid $color-gray;
+				transform: translateY(-50%) rotate(180deg);
+			}
+		}
+		&--down {
+			&::before {
+				border-top: 6px solid $color-gray;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1600px) {
+	.dashboard {
+		&__column.col-9 {
+			width: 100%;
+		}
+		&__column.col-3 {
+			width: 50%;
 		}
 	}
 }
