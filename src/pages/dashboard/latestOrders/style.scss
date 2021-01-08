@@ -1,0 +1,18 @@
+.latest-orders {
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 16px;
+	}
+	&__title {
+		margin-right: 17px;
+	}
+	&__sort {
+		margin-right: 37px !important;
+	}
+}
+
+.zhamal {
+	height: 300px;
+}

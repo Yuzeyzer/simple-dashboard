@@ -10,8 +10,15 @@ const useStyles = makeStyles((theme) => ({
   },
   color: {
     backgroundColor: '#47B881',
-    color: '#fff'
-  }
+    color: '#fff',
+  },
+  whiteBtn: {
+    backgroundColor: 'white',
+    color: '#1665D8',
+    padding: '10px 20px',
+    letterSpacing: '1.25px',
+    textTransform: 'uppercase',
+  },
 }));
 
 export function PrimaryBtn({ text, handleClickModal }) {
@@ -24,10 +31,23 @@ export function PrimaryBtn({ text, handleClickModal }) {
   );
 }
 
+export function WhiteBtn({ text, handleClickModal }) {
+  const classes = useStyles();
+  return (
+    <Button
+      onClick={handleClickModal}
+      className={classes.whiteBtn}
+      variant='contained'
+      color='white'>
+      {text}
+    </Button>
+  );
+}
+
 export function GreenBtn({ text, handleClickModal }) {
   const classes = useStyles();
   return (
-    <Button onClick={handleClickModal} className={classes.color} variant='contained' >
+    <Button onClick={handleClickModal} className={classes.color} variant='contained'>
       {text}
     </Button>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
-import TopCards from './topCards';
-import VerticalBar from './verticalBar';
-import CircleChart from './circle';
-import LatesProducts from './latestProducts';
+import Cards from './cards';
+import UsersDevice from './usersDevice';
+import LatestProducts from './latestProducts';
+import LatestOrders from './latestOrders';
 import './style.scss';
+
 const Dashboard = () => {
   return (
     <section className='dashboard'>
@@ -11,10 +12,13 @@ const Dashboard = () => {
         <div className='row dashboard__row'>
           <div className='col-12 dashboard__column'>
             <div className=''>
-              <TopCards />
+              <Cards />
             </div>
           </div>
-          <div className='col-9 dashboard__column'>
+          <div className='col-12'>
+            <UsersDevice />
+          </div>
+          {/* <div className='col-9 dashboard__column'>
             <div className='dashboard__item'>
               <VerticalBar />
             </div>
@@ -23,10 +27,15 @@ const Dashboard = () => {
             <div className='dashboard__item'>
               <CircleChart />
             </div>
-          </div>
+          </div> */}
           <div className='col-3 dashboard__column'>
             <div className='dashboard__item'>
-              <LatesProducts />
+              <LatestProducts />
+            </div>
+          </div>
+          <div className='col-9 dashboard__column'>
+            <div className='dashboard__item'>
+              <LatestOrders />
             </div>
           </div>
         </div>

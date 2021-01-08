@@ -1,7 +1,7 @@
 import React from 'react';
-import { cardsData } from './const';
+import { cardsData } from '../const';
 
-const TopCards = () => {
+const Cards = () => {
   return (
     <div className='top-cards row top-cards__row'>
       {cardsData.map((item) => {
@@ -38,4 +38,4 @@ const TopCards = () => {
   );
 };
 
-export default TopCards;
+export default Cards;

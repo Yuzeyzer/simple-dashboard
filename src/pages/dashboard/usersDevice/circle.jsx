@@ -1,6 +1,6 @@
 import React from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
-import DaysPopUp from './daysPopUp';
+import DaysPopUp from '../components/daysPopUp';
 
 const CircleChart = () => {
   const testObject = [

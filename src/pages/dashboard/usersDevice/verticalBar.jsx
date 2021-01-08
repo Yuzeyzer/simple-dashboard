@@ -1,7 +1,7 @@
 import React from 'react';
 import { Bar } from '@reactchartjs/react-chart.js';
-import { chartData } from './const';
-import DaysPopUp from './daysPopUp';
+import { chartData } from '../const';
+import DaysPopUp from '../components/daysPopUp';
 const VerticalBar = () => {
   const [arrayOfData, setArrayOfData] = React.useState(chartData[0]);
 

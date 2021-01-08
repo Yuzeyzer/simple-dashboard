@@ -1,5 +1,5 @@
 import React from 'react';
-import { days } from './const';
+import { days } from '../../const';
 
 const DaysPopUp = ({ setArrayOfData, chartData, setPercent, testObject }) => {
   const [listItem, setListItem] = React.useState(0);
